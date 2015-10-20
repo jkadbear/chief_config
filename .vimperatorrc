@@ -1,0 +1,21 @@
+"3.8.2 (created: 2014/02/13 23:52:43)
+
+highlight Hint font-family: monospace;  font-size: 10px; font-weight: bold; text-transform: uppercase; color: black; background-color: yellow; border-width: 2px; border-style: solid; padding: 0px 0px 0px 0px; 
+highlight Hint::after content: attr(number); font-size: 12pt
+highlight Normal color: white; background: black;
+""set tabnumber
+nnoremap K <C-p>
+nnoremap J <C-n>
+nnoremap j jj
+nnoremap k kk
+nnoremap ; :
+nnoremap : ;
+nnoremap g4 g$
+source! /home/jkadbear/.vimperatorrc.local
+set hintchars=asdfghjkleriou
+""set guioption=bCrN
+set hlsearch=false
+style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}s
+" vim: set ft=vimperator:
+set nextpattern='^\s*[下后][一]?[页张个篇章节步]\s*[>»]?$','^Next [>»]','^Next »','\bnext\b',^>$,'^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
+set previouspattern='^\s*[<«]?[上前][一]?[页张个篇章节步]\s*$','[<«] Prev$','« Prev$','\bprev(ious)?\b',^<$,'^(<<|«)$','^(<|«)','(<|«)$'
