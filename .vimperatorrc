@@ -6,8 +6,8 @@ highlight Normal color: white; background: black;
 ""set tabnumber
 nnoremap K <C-p>
 nnoremap J <C-n>
-nnoremap j jj
-nnoremap k kk
+nnoremap j <Down>
+nnoremap k <Up>
 nnoremap ; :
 nnoremap : ;
 nnoremap g4 g$
