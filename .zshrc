@@ -26,8 +26,9 @@ FINISH="%{$terminfo[sgr0]%}"
 #}}}
  
 #命令提示符
-RPROMPT=$(echo "$RED%D %T$FINISH")
-PROMPT=$(echo "$CYAN%n@$YELLOW%M:$GREEN%/$_YELLOW>$FINISH ")
+#RPROMPT=$(echo "$RED%D %T$FINISH")
+PROMPT=$(echo "$CYAN%n: $GREEN%/\n$_YELLOW~>$FINISH ")
+#PROMPT=$(echo "$CYAN%n@$YELLOW%M:$GREEN%/\n$_YELLOW>$FINISH")
  
 #PROMPT=$(echo "$BLUE%M$GREEN%/
 #$CYAN%n@$BLUE%M:$GREEN%/$_YELLOW>>>$FINISH ")
@@ -238,12 +239,14 @@ bindkey "\e\e" sudo-command-line
 #}}}
  
 #命令别名 {{{
+alias lex='flex'
 alias cl='clear'
 alias sl='ls'
 alias ls='ls -F --color=auto'
 alias ll='ls -al'
 alias la='ls -a'
 alias gp='grep --color=auto'
+alias pp='ps aux | grep --color=auto'
 alias pac='sudo pacman'
 alias yao='yaourt'
 alias vi='sudo vim'
@@ -253,8 +256,6 @@ alias bc='bcloud-gui&'
 alias p3='python3'
 alias ok='okular'
 alias psu='pacman -Syu'
-alias lib='libreoffice'
-alias dos='dosemu&'
 alias shot='ksnapshot'
 alias speed='speedcrunch'
 alias f='fortune'
@@ -267,6 +268,8 @@ alias mp='mux start p'
 alias conoha='ssh 133.130.106.123'
 alias shadow='cd /etc/shadowsocks && sslocal config.json > /dev/null 2>&1 & cd -'
 alias ps4='proxychains4'
+alias ta='tmux attach'
+alias tk='tmux kill-session'
 alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
