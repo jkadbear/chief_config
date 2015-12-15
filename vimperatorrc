@@ -12,10 +12,18 @@ nnoremap ; :
 nnoremap : ;
 nnoremap g4 g$
 source! /home/jkadbear/.vimperatorrc.local
-set hintchars=asdfghjkleriou
+set hintchars=asdfghjkleriou;
 ""set guioption=bCrN
 set hlsearch=false
-style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}s
+""切换到command mode的时候，自动去激活输入法
+style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 " vim: set ft=vimperator:
 set nextpattern='^\s*[下后][一]?[页张个篇章节步]\s*[>»]?$','^Next [>»]','^Next »','\bnext\b',^>$,'^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
 set previouspattern='^\s*[<«]?[上前][一]?[页张个篇章节步]\s*$','[<«] Prev$','« Prev$','\bprev(ious)?\b',^<$,'^(<<|«)$','^(<|«)','(<|«)$'
+
+nnoremap <silent> f :silent !fcitx-remote -c<CR>f
+nnoremap <silent> F :silent !fcitx-remote -c<CR>F
+
+set wildmode=list:full 
+set suggestengines=''
+set focuscontent

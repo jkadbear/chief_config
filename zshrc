@@ -27,7 +27,7 @@ FINISH="%{$terminfo[sgr0]%}"
  
 #命令提示符
 #RPROMPT=$(echo "$RED%D %T$FINISH")
-PROMPT=$(echo "$CYAN%n: $GREEN%/\n$_YELLOW~>$FINISH ")
+PROMPT=$(echo "$CYAN%n@%M: $GREEN%/\n$_YELLOW~>$FINISH ")
 #PROMPT=$(echo "$CYAN%n@$YELLOW%M:$GREEN%/\n$_YELLOW>$FINISH")
  
 #PROMPT=$(echo "$BLUE%M$GREEN%/
@@ -254,6 +254,7 @@ alias sc='systemctl'
 alias ff='nohup firefox > /dev/null 2>&1 &'
 alias bc='bcloud-gui&'
 alias p3='python3'
+alias ip3='ipython'
 alias ok='okular'
 alias psu='pacman -Syu'
 alias shot='ksnapshot'
@@ -265,13 +266,18 @@ alias va='vagrant'
 alias off='modprobe -r psmouse'
 alias on='modprobe -a psmouse'
 alias mp='mux start p'
+alias mb='mux start b'
 alias conoha='ssh 133.130.109.213'
+alias monoha='mosh root@133.130.109.213'
 alias shadow='cd /etc/shadowsocks && sslocal config.json > /dev/null 2>&1 & cd -'
+alias ftpal='lftp ustc@202.38.75.109'
 alias ps4='proxychains4'
 alias ta='tmux attach'
 alias tk='tmux kill-session'
 alias vv='viewnior'
 alias sha='sha > /dev/null 2>&1&'
+alias mountwin='mount /dev/sda2 /mnt/windows -ro force'
+alias gjk='cd /mnt/windows/Users/jkad'
 alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
@@ -370,3 +376,4 @@ autoload -U compinit && compinit -u
 modprobe vboxdrv
 
 export VAGRANT_HOME="/home/vagrant_box/.vagrant.d/"
+export PATH=/opt/llvm3.6/bin/:$PATH
