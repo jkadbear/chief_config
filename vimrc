@@ -1,3 +1,55 @@
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+""filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+" Vim Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+""filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -13,10 +65,6 @@
 if v:progname =~? "evim"
   finish
 endif
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -66,13 +114,12 @@ if has("autocmd")
   inoremap { {}<Esc>i
   inoremap ( ()<Esc>i
   inoremap [ []<Esc>i
-  inoremap ' ''<Esc>i
   inoremap " ""<Esc>i
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+  ""filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -95,10 +142,6 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
-  set exrc
-  set secure
-
 endif " has("autocmd")
 
 set exrc
@@ -112,15 +155,13 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set nocp
-set clipboard=unnamed
-set clipboard=unnamedplus
+set timeoutlen=100
 filetype plugin on
 nnoremap ; :
 nnoremap : ;
 nnoremap - $
 inoremap <TAB> <c-r>=TabSkipPair()<CR>
 inoremap <CR> <c-r>=CRnextline()<CR>
-""inoremap <C-s> <Esc>:w<CR>a
 nnoremap <F3> <Esc>:call ToggleLine()<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -128,8 +169,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 "" Calendar
 nnoremap <F9> :Calendar<cr>
-""nnoremap <C-s> :w<CR>a
-vnoremap <C-c> "+y
+
+vmap "+y :w !pbcopy<CR><CR>
+nmap "+p :r !pbpaste<CR><CR>
 
 func TabSkipPair()
 	if getline('.')[col('.') - 1] == '}'||getline('.')[col('.') - 1] == ')'||getline('.')[col('.') - 1] == ']'||getline('.')[col('.') - 1] == '"'||getline('.')[col('.') - 1] == "'"||getline('.')[col('.') - 1] == '>'
@@ -173,9 +215,6 @@ func CRnextline()
 endfunc
 
 " Convenient command to see the difference between the current buffer and the
-"
-" 
-"
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
@@ -183,27 +222,4 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-"##### auto fcitx  ###########
-let g:input_toggle = 1
-function! Fcitx2en()
-   let s:input_status = system("fcitx-remote")
-   if s:input_status == 2
-      let g:input_toggle = 1
-      let l:a = system("fcitx-remote -c")
-   endif
-endfunction
-
-function! Fcitx2zh()
-   let s:input_status = system("fcitx-remote")
-   if s:input_status != 2 && g:input_toggle == 1
-      let l:a = system("fcitx-remote -o")
-      let g:input_toggle = 0
-   endif
-endfunction
-
-set ttimeoutlen=150
-"退出插入模式
-autocmd InsertLeave * call Fcitx2en()
-"进入插入模式
-autocmd InsertEnter * call Fcitx2zh()
-"##### auto fcitx end ######
+let g:vim_markdown_folding_disabled = 1
