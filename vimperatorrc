@@ -15,8 +15,6 @@ source! /home/jkadbear/.vimperatorrc.local
 set hintchars=asdfghjkleriou;
 ""set guioption=bCrN
 set hlsearch=false
-""切换到command mode的时候，自动去激活输入法
-style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 " vim: set ft=vimperator:
 set nextpattern='^\s*[下后][一]?[页张个篇章节步]\s*[>»]?$','^Next [>»]','^Next »','\bnext\b',^>$,'^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
 set previouspattern='^\s*[<«]?[上前][一]?[页张个篇章节步]\s*$','[<«] Prev$','« Prev$','\bprev(ious)?\b',^<$,'^(<<|«)$','^(<|«)','(<|«)$'

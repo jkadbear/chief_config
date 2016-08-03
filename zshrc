@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="random"
+ZSH_THEME="terminalparty"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -91,7 +91,6 @@ alias ip2="ipython2"
 alias c='clang'
 alias c+='clang++ -Wno-c++11-extensions'
 alias va='vagrant'
-alias sub="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias tk='tmux kill-session'
 alias t="tmux attach -t"
 alias cl='clear'
@@ -102,19 +101,3 @@ alias .5="cd ../../../../.."
 alias sl="ls"
 alias vz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
-alias burp="java -jar -Xmx1024m ~/Program/burpsuite_free_v1.7beta.jar&"
-alias ps4="proxychains4"
-alias pc="pbcopy"
-alias pa="pbpaste"
-alias hl="heroku local"
-alias pf="psql -U jkadbear faiproj"
-alias qemu="qemu-system-i386"
-export PATH=/Users/jkadbear/.mytaste:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/Applications/MATLAB_R2015b.app/bin:$PATH
-export DATABASE_URL=postgres:///jkadbear
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-source /usr/local/opt/nvm/nvm.sh
-export PATH="/Users/jkadbear/Downloads/burpsuite_v1.6.38:$PATH"
-
