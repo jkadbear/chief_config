@@ -54,6 +54,7 @@ plugins=(git)
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.mytaste:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -102,7 +103,6 @@ alias .5="cd ../../../../.."
 alias sl="ls"
 alias vz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
-alias burp="java -jar -Xmx1024m ~/Program/burpsuite_free_v1.7beta.jar&"
 alias ps4="proxychains4"
 alias pc="pbcopy"
 alias pa="pbpaste"
@@ -116,5 +116,4 @@ export DATABASE_URL=postgres:///jkadbear
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 source /usr/local/opt/nvm/nvm.sh
-export PATH="/Users/jkadbear/Downloads/burpsuite_v1.6.38:$PATH"
 
