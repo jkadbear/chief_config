@@ -100,6 +100,7 @@ endif " has("autocmd")
 set exrc
 set secure
 set vb
+set nu
 set smarttab
 set expandtab
 set ai
