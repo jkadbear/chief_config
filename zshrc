@@ -85,15 +85,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gp='grep --color=auto'
 alias pp='ps aux | grep --color=auto'
-alias p3='ipython3'
-alias p2='ipython2'
+alias p3='python3'
 alias ip3='ipython3'
-alias ip2="ipython2"
 alias c='clang'
 alias c+='clang++ -Wno-c++11-extensions'
 alias va='vagrant'
 alias tk='tmux kill-session'
-alias t="tmux attach -t"
+alias ta="tmux attach"
 alias cl='clear'
 alias .2="cd ../.."
 alias .3="cd ../../.."
