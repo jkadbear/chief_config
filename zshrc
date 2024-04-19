@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="random"
+ZSH_THEME="amuse"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -60,7 +60,9 @@ export PATH=$HOME/.mytaste:$PATH
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US:
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -83,19 +85,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gp='grep --color=auto'
-alias pp='ps aux | grep --color=auto'
-alias p3='ipython3'
-alias p2='ipython2'
-alias ip3='ipython3'
-alias ip2="ipython2"
-alias c='clang'
-alias c+='clang++ -Wno-c++11-extensions'
-alias va='vagrant'
-alias sub="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias tk='tmux kill-session'
-alias t="tmux attach -t"
-alias cl='clear'
+alias gp="grep --color=auto"
+alias pp="ps aux | grep --color=auto"
+alias p3="python3"
+alias ip3="ipython3"
+alias tk="tmux kill-session"
+alias ta="tmux -u attach"
+alias t="tmux -u attach -t"
+alias cl="clear"
 alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
@@ -106,14 +103,3 @@ alias sz="source ~/.zshrc"
 alias ps4="proxychains4"
 alias pc="pbcopy"
 alias pa="pbpaste"
-alias hl="heroku local"
-alias pf="psql -U jkadbear faiproj"
-alias qemu="qemu-system-i386"
-export PATH=/Users/jkadbear/.mytaste:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/Applications/MATLAB_R2015b.app/bin:$PATH
-export DATABASE_URL=postgres:///jkadbear
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-source /usr/local/opt/nvm/nvm.sh
-
